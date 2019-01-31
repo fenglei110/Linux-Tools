@@ -9,7 +9,7 @@ sort -n log.txt
 sort -r log.txt
 
 """
-uniq消除重复行
+uniq消除重复行,注意必须是连续行
 """
 sort log.txt | uniq
 
@@ -18,3 +18,6 @@ sort log.txt | uniq -c
 
 # 找出重复行
 sort log.txt | uniq -d
+
+# 一个ip.txt文件，每行一条ip记录，共若干行，实现‘统计出现次数最多的前三个ip及其次数’
+sort ip.txt | uniq -c | sort -rn | head -n 3

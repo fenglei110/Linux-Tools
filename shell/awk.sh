@@ -2,6 +2,16 @@
 
 """
 awk 数据流处理工具
+内建变量
+$0 当前记录
+$1-$n
+FS 字段分隔符，默认为tab
+NF 有多少列
+NR 行号
+RS 输入的记录分隔符
+OFS 输出字段分隔符
+ORS 输出的记录分隔符
+FILENAME 当前输入文件的名字
 """
 # print以逗号分割，参数以空格为界
 echo | awk ' {var1="v1"; var2="v2"; var3="v3"; print var1, var2, var3;}'
@@ -26,11 +36,8 @@ awk '{print v}' v=$var file  # 输入来自file
 # 将外部shell命令的输出读入到变量out中
 echo | awk '{"grep root /etc/passwd" | getline out; print out }'
 
-# 在awk中使用循环
-for(i=0;i<10;i++){print $i;}
-for(i in array){print array[i]}
-
-echo '2015_04_22 20:12:22: how are you!'|awk -F ':' '{print $1 ":" $2 ":" $3; print $4;}'
+# -F指定分割符
+echo '2015_04_22 20:12:22: how are you!'|awk -F: '{print $1 ":" $2 ":" $3; print $4;}'
 # >2015_04_22 20:12:22
 # >how are you!
 

@@ -6,20 +6,20 @@
 - free  
 直观的展示linux系统内存使用以及交换区的容量大小等
 
-- ps aux -sort -ress
+- ps aux -sort -ress  
 各个线程的资源使用情况
 
-- vmstat -s
+- vmstat -s  
 vmstat命令显示实时和平均的统计，覆盖CPU，内存，I/O等内容。
 
-- netstat
+- netstat  
 显示实际的网络链接，路由表，以及每一个网络接口设备的状态信息
 
-- df
+- df  
 检查文件系统的磁盘空间的占用情况
 
-- pg
+- pg  
 一次性查看进程结果
 
-- jobs
+- jobs  
 查看后台进程作业
